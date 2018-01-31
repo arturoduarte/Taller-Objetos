@@ -1,19 +1,20 @@
-class Student
-	attr_accessor :name, :nota
-	def initialize(name,nota)
-		@name = name
-		@nota= nota
+# 1. Crear la clase punto, un punto tiene una posición x y una posición y .
+# 2. Crear métodos getter y setter para los atributos del punto.
+# 3. Crear 10 puntos al azar.
+
+class Punto
+	attr_accessor :x,:y
+	def initialize(x,y)
+		@x = x
+		@y = y
 	end
 end
 
-nombres = %w(Alicia Javier Camila Francisco Pablo Josefina)
-estudiantes = []
-	i = 1
-	nombres.each do |nombre|
-		estudiantes.push(Student.new(nombre,i))
-		i += 1
+puntos = []
+10.times do
+	puntos.push(Punto.new(rand(10),rand(10)))
 end
 
-notas = estudiantes.map {|alumno| alumno.nota}
-print "\n"
-print "Las Notas son: #{notas}\n"
+puntos.each do |elemento| 
+	puts "Los elementos son: x = #{elemento.x} --> y = #{elemento.y}"
+end
